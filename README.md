@@ -1,7 +1,7 @@
-# `.Srt` To Text Converter
-Python program that converts a SubRip (`.srt`) into a text file. It provides a few options for formatting and can extract the subtitle timing specification as a template file that can be filled in to add new subtitles for each interval.
+# `.srt` To `.txt` Converter
+Python program that converts a SubRip file (`.srt`) into a text file (`.txt`). It provides a few options for formatting and can extract the subtitle timing specification as a template file that can be filled in to add new subtitles for each interval.
 
-Example of an `.srt` file (`some_subtitles.srt`):
+Example of an `.srt` file -  `some_subtitle.srt`:
 
 ```
 1
@@ -38,10 +38,9 @@ optional arguments:
 
 If the `--preserve-lines ` option or `-p` flag is provided, lines in the text file will be separated in the original block format so as to preserve the original format without including timing information (i.e. with a line between each between block of text). This is the default format and will be applied if no other formatting option is provided.
 
-e.g.:
+e.g., `some_subtitle.txt`:
 
 ```
-# resulting text file (some_subtitles.txt)
 This is the first subtitle text.
 It is multiple lines.
 
@@ -50,44 +49,30 @@ This is some other subtitle text.
 
 If the `--interval-in-one-line` option or `-i` flag is provided, all subtitle text for each interval will be all together one line for that specific interval regardless if the original file has the text separated in multiple lines:
 
-e.g.:
+e.g., `some_subtitle.txt`:
 
 ```
-# resulting text file (some_subtitles.txt)
 This is the first subtitle text.It is multiple lines.
 This is some other subtitle text.
 ```
 
 If the `--all-in-one-line` option or `-a` flag is provided, all subtitle text in the file will be printed in one line:
 
-e.g.:
+e.g., `some_subtitle.txt`:
 
 ```
-# resulting text file (some_subtitles.txt)
- This is the first subtitle text. It is multiple lines.  This is some other subtitle text.
+This is the first subtitle text. It is multiple lines.  This is some other subtitle text.
 ```
 
 
 
-### Timing Saving
+## Save Timing to File
 
-To save the timing information to a file, use the ` --timing-save` option or `-t` flag
+To save the timing information to a file, use the ` --timing-save` option or `-t` flag.
 
-e.g.: 
+e.g., `some_subtitles_srt_info.txt`: 
 
 ```
-# original srt file (some_subtitles.srt)
-1
-00:01:00,000 --> 00:02:00,000
-This is the first subtitle text.
-It is multiple lines.
-
-2
-00:03:00,000 --> 00:04:00,000
-This is some other subtitle text.
-
-=========================================
-# timing file (some_subtitles_srt_info.txt)
 1
 00:01:00,000 --> 00:02:00,000
 
