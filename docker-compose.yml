@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  srt2text:
+    image: srt2text
+    build:
+      context: .
+      dockerfile: ./Dockerfile
